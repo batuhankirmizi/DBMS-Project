@@ -11,7 +11,6 @@
 
         public override void Control()
         {
-        
             Connect(connectorString);
         }
     }
