@@ -1,4 +1,5 @@
-﻿using DBMS.Controllers.DB;
+﻿using System;
+using DBMS.Controllers.DB;
 
 namespace DBMS.Controllers
 {
@@ -36,7 +37,7 @@ namespace DBMS.Controllers
             while(Reader.Read())
                 if(Reader["username"].Equals(username) && Reader["password"].Equals(password))
                 {
-                    user = new User(Reader["id"].ToString(), Reader["username"].ToString(), Reader["password"].ToString(), Reader["name"].ToString());
+                    user = new User(Reader["id"].ToString(), Reader["username"].ToString(), Reader["password"].ToString(), Reader["name"].ToString(), Int32.Parse(Reader["is_manager"].ToString()));
                     return true;
                 }
 

@@ -28,30 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button_login;
+            this.button_login = new System.Windows.Forms.Button();
             this.label_header = new System.Windows.Forms.Label();
             this.textbox_username = new System.Windows.Forms.TextBox();
             this.label_username = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
             this.textbox_password = new System.Windows.Forms.TextBox();
-            button_login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_login
             // 
-            button_login.BackColor = System.Drawing.Color.SteelBlue;
-            button_login.Cursor = System.Windows.Forms.Cursors.Hand;
-            button_login.FlatAppearance.BorderSize = 0;
-            button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            button_login.ForeColor = System.Drawing.SystemColors.HighlightText;
-            button_login.Location = new System.Drawing.Point(360, 338);
-            button_login.Name = "button_login";
-            button_login.Size = new System.Drawing.Size(215, 60);
-            button_login.TabIndex = 0;
-            button_login.Text = "Log In";
-            button_login.UseVisualStyleBackColor = false;
-            button_login.Click += new System.EventHandler(this.Button_login_Click);
+            this.button_login.BackColor = System.Drawing.Color.SteelBlue;
+            this.button_login.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_login.FlatAppearance.BorderSize = 0;
+            this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_login.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button_login.Location = new System.Drawing.Point(360, 338);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(215, 60);
+            this.button_login.TabIndex = 0;
+            this.button_login.Text = "Log In";
+            this.button_login.UseVisualStyleBackColor = false;
+            this.button_login.Click += new System.EventHandler(this.Button_login_Click);
             // 
             // label_header
             // 
@@ -115,12 +114,14 @@
             this.Controls.Add(this.label_username);
             this.Controls.Add(this.textbox_username);
             this.Controls.Add(this.label_header);
-            this.Controls.Add(button_login);
+            this.Controls.Add(this.button_login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "LoginPage";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gym Management System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginPage_FormClosing);
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,6 +134,7 @@
         private System.Windows.Forms.Label label_username;
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.TextBox textbox_password;
+        internal System.Windows.Forms.Button button_login;
     }
 }
 

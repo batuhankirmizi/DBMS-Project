@@ -10,6 +10,8 @@ namespace DBMS
     {
         private LoginController loginController;
 
+        private Form previousForm;
+
         public LoginPage()
         {
             InitializeComponent();
@@ -35,21 +37,33 @@ namespace DBMS
             {
                 MainPage page = new MainPage();
                 NavigateTo(page);
-            }
-            else
-            {
+            } else {
                 MessageBox.Show("Username or password is incorrect");
             }
         }
 
         public void Button_login_Click(object sender, EventArgs e) {
+            button_login.TabStop = false;
+
             HandleSubmit();
         }
 
         public void NavigateTo(IViewHandler form)
         {
-            form.Activate(this, loginController.User);
+            ClearTextBoxes();
+
             Hide();
+
+            form.Activate(this, loginController.User);
+        }
+
+        /// <summary>
+        /// Clears the text boxes.
+        /// </summary>
+        private void ClearTextBoxes()
+        {
+            textbox_username.Text = "";
+            textbox_password.Text = "";
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
@@ -68,6 +82,17 @@ namespace DBMS
             }
         }
 
-        public void Activate(Form sender, User user = null) => throw new NotImplementedException();
+        public void Activate(Form sender, User user = null)
+        {
+            Show();
+
+            previousForm = sender;
+        }
+
+        private void LoginPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(previousForm != null && !previousForm.IsDisposed)
+                previousForm.Dispose();
+        }
     }
 }
