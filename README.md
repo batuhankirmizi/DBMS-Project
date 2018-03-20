@@ -1,2 +1,2 @@
 # DBMS-Project
-Application for Database Managament Systems class' project
+Application for Database Managament Systems Class' Project
