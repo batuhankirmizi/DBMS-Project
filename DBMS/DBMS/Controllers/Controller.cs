@@ -1,19 +1,18 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Data.SQLite;
+﻿using System.Windows.Forms;
+using System.Configuration;
+using System.Data.Common;
 using System.IO;
 
 namespace DBMS.Controllers
 {
     public abstract class Controller : IDBConnector
     {
-        private SQLiteCommand command;
-        public SQLiteCommand Command { get => command; set => command = value; }
+        private DbProviderFactory factory = DbProviderFactories.GetFactory(ConfigurationManager.AppSettings["provider"]);
 
-        private SQLiteDataReader reader;
-        public SQLiteDataReader Reader { get => reader; set => reader = value; }
+        private DbDataReader reader;
+        public DbDataReader Reader { get => reader; set => reader = value; }
 
-        protected SQLiteConnection dbConnection;
+        protected DbConnection connection;
 
         protected string connectionString = "";
 
@@ -21,25 +20,32 @@ namespace DBMS.Controllers
 
         public virtual void Connect(string databaseName)
         {
-            if(!DatabaseExists(databaseName)) {
+            if (!DatabaseExists(databaseName))
+            {
                 MessageBox.Show("Database Connection Error! " + databaseName + " cannot be found.");
             } else {
-                connectionString = "Data Source=" + SDBStatics.DB_PATH + databaseName + ";version=3;";
-                dbConnection = new SQLiteConnection(connectionString);
+                string connectionString = "Data Source=BATU-PC;Initial Catalog=" + databaseName + ";Integrated Security=True;Pooling=False";
 
-                dbConnection.Open();
+                connection = factory.CreateConnection();
+                connection.ConnectionString = connectionString;
+
+                connection.Open();
             }
         }
 
+        // TODO:
         /// <summary>
         /// Executes the given SQL Query
         /// </summary>
         /// <param name="query"> query string to be executed </param>
         /// <returns> return a reader instance to read the data </returns>
-        protected virtual SQLiteDataReader ExecuteQuery(string query)
+        protected virtual DbDataReader ExecuteQuery(string query)
         {
-            command = new SQLiteCommand(commandText: query, connection: dbConnection);
-            if(command != null)
+            DbCommand command = factory.CreateCommand();
+            command.Connection = connection;
+            command.CommandText = query;
+
+            if (command != null)
                 return command.ExecuteReader();
             return null;
         }
@@ -50,8 +56,11 @@ namespace DBMS.Controllers
         /// <returns> true if the data is validated </returns>
         public abstract bool Control();
 
-        protected virtual bool DatabaseExists(string databaseName) => File.Exists(path: SDBStatics.DB_PATH + databaseName);
+        protected virtual bool DatabaseExists(string databaseName) => true; //File.Exists(path: SDBStatics.DB_PATH + databaseName);
 
-        public void Disconnect() => dbConnection.Close();
+        public void Disconnect()
+        {
+           connection.Close();
+        }
     }
 }

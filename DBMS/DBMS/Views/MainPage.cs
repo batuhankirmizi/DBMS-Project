@@ -19,11 +19,12 @@ namespace DBMS.Views
             InitializeComponent();
         }
 
-        public void Activate(Form sender, User user)
+        public void Activate(Form sender)
         {
             previousForm = sender;
+            
+            user = new User(SSession.username, SSession.name, SSession.isManager);
 
-            this.user = user;
             label_welcome.Text += user.Name;
 
             Show();
@@ -62,6 +63,8 @@ namespace DBMS.Views
 
         private void button_back_Click(object sender, EventArgs e)
         {
+            SSession.End();
+
             NavigateTo((IViewHandler) previousForm);
         }
     }

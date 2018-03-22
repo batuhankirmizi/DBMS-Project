@@ -11,6 +11,6 @@ namespace DBMS.Controllers
         /// <param name="form">The form to be navigated.</param>
         void NavigateTo(IViewHandler form);
 
-        void Activate(Form sender, User user = null);
+        void Activate(Form sender);
     }
 }

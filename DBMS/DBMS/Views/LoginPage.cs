@@ -54,7 +54,7 @@ namespace DBMS
 
             Hide();
 
-            form.Activate(this, loginController.User);
+            form.Activate(this);
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace DBMS
             }
         }
 
-        public void Activate(Form sender, User user = null)
+        public void Activate(Form sender)
         {
             Show();
 
