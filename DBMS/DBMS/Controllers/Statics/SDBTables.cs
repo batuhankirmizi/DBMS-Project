@@ -1,7 +1,9 @@
 ﻿public static class SDBTables
 {
-    // Admins.db tables:
-    public static string ADMINS_USERS = "Users";
+    // Administration DB tables:
+    public static string ADMINISTRATION_USERS = "Users";
 
-    // MainDatabase.db tables:
+    public static string ADMINISTRATION_LOGIN_HISTORY = "[Login History]";
+
+    // MainDatabase DB tables:
 }

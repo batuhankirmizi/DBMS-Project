@@ -1,11 +1,11 @@
 ﻿using System.Windows.Forms;
 using System.Configuration;
 using System.Data.Common;
-using System.IO;
+using DBMS.Controllers.Interfaces;
 
 namespace DBMS.Controllers
 {
-    public abstract class Controller : IDBConnector
+    public abstract class Controller : IDBConnector, IDBLogger
     {
         private DbProviderFactory factory = DbProviderFactories.GetFactory(ConfigurationManager.AppSettings["provider"]);
 
@@ -56,11 +56,21 @@ namespace DBMS.Controllers
         /// <returns> true if the data is validated </returns>
         public abstract bool Control();
 
-        protected virtual bool DatabaseExists(string databaseName) => true; //File.Exists(path: SDBStatics.DB_PATH + databaseName);
+        protected virtual bool DatabaseExists(string databaseName) => true;
 
         public void Disconnect()
         {
            connection.Close();
+        }
+
+        public void Log(int admin_id, string username, string logDetails)
+        {
+            ExecuteQuery(SDBQueries.LOGIN_HISTORY_QUERY + admin_id + "', '" + username + "', '" + logDetails + "')");
+        }
+
+        public void FailLog(string username, string logDetails)
+        {
+            ExecuteQuery(SDBQueries.LOGIN_HISTORY_QUERY_FAILED + username + "', '" + logDetails + "')");
         }
     }
 }

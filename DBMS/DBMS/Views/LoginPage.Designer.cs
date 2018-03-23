@@ -38,7 +38,7 @@
             // 
             // button_login
             // 
-            this.button_login.BackColor = System.Drawing.Color.SteelBlue;
+            this.button_login.BackColor = System.Drawing.SystemColors.Highlight;
             this.button_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_login.FlatAppearance.BorderSize = 0;
             this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(982, 603);
             this.Controls.Add(this.textbox_password);
             this.Controls.Add(this.label_password);

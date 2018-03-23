@@ -1,7 +1,5 @@
 ﻿using DBMS.Controllers.DB;
 using System;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace DBMS.Controllers
 {
@@ -16,7 +14,7 @@ namespace DBMS.Controllers
         private string password;
         public string Password { get => password; set => password = value; }
 
-        private const string connectorString = SDBStatics.LOGIN_DB;
+        private const string dbName = SDBStatics.LOGIN_DB;
 
         public LoginController() { }
 
@@ -28,7 +26,7 @@ namespace DBMS.Controllers
 
         public override bool Control()
         {
-            Connect(connectorString);
+            Connect(dbName);
 
             return Validate(username, password);
         }
@@ -49,10 +47,17 @@ namespace DBMS.Controllers
 
                     Login(user.Username, user.Name, user.Is_manager);
 
+                    Reader.Close();
+
+                    Log(Int32.Parse(user.Id), user.Username, "Log In Successful on " + DateTime.UtcNow.Date.ToString("dd/MM/yyyy") + " at " + DateTime.Now.ToString("h:mm:ss tt") );
+
                     return true;
                 }
             }
-                
+
+            Reader.Close();
+
+            FailLog(username, "Log In failed on " + DateTime.UtcNow.Date.ToString("dd/MM/yyyy") + " at " + DateTime.Now.ToString("h:mm:ss tt"));
 
             return false;
         }

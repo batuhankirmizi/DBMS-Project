@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using DBMS.Controllers;
 using DBMS.Views;
-using DBMS.Controllers.DB;
 
 namespace DBMS
 {

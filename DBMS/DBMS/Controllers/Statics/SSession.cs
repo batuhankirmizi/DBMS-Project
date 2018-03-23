@@ -1,4 +1,5 @@
-﻿using System.Timers;
+﻿using System;
+using System.Diagnostics;
 
 namespace DBMS.Controllers
 {
@@ -8,15 +9,16 @@ namespace DBMS.Controllers
         public static string name = "";
         public static bool isManager = false;
 
-        private static Timer timer = new Timer();
+        private static Stopwatch stopWatch = new Stopwatch();
         
+
         public static void Start(string username_, string name_, bool isManager_)
         {
             username = username_;
             name = name_;
             isManager = isManager_;
 
-            timer.Start();
+            stopWatch.Start();
         }
 
         public static void End()
@@ -25,12 +27,12 @@ namespace DBMS.Controllers
             name = "";
             isManager = false;
 
-            timer.Stop();
+            stopWatch.Stop();
         }
 
         public static string GetElapsedTime()
         {
-            return timer.ToString();
+            return String.Format("{0:00}:{1:00}:{2:00}", stopWatch.Elapsed.Hours, stopWatch.Elapsed.Minutes, stopWatch.Elapsed.Seconds);
         }
     }
 }

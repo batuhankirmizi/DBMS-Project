@@ -1,8 +1,8 @@
-﻿CREATE TABLE [dbo].[Users] (
-    [id]         INT        NOT NULL IDENTITY(1, 1) PRIMARY KEY,
-    [username]   VARCHAR(25) NOT NULL,
-    [password]   VARCHAR(16) NOT NULL,
-    [name]       VARCHAR(30) NOT NULL,
-    [is_manager] BIT        NOT NULL
-);
-
+﻿CREATE TABLE [dbo].[Users]
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY UNIQUE, 
+    [username] VARCHAR(25) NOT NULL UNIQUE, 
+    [passsword] VARCHAR(16) NOT NULL, 
+    [name] VARCHAR(35) NOT NULL, 
+    [is_manager] BIT NOT NULL
+)
