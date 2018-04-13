@@ -4,5 +4,5 @@
              
     public const string LOGIN_DB = "Administration";
      
-    public const string MAIN_DB = "MainDatabase";
+    public const string MAIN_DB = "Main Database";
 }

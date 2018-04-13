@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DBMS.Controllers;
+using DBMS.Controllers.Interfaces;
 using DBMS.Views;
 
 namespace DBMS
@@ -32,8 +33,7 @@ namespace DBMS
             loginController.Username = textbox_username.Text;
             loginController.Password = textbox_password.Text;
 
-            if (loginController.Control())
-            {
+            if (loginController.Control()) {
                 MainPage page = new MainPage();
                 NavigateTo(page);
             } else {
@@ -52,7 +52,7 @@ namespace DBMS
             ClearTextBoxes();
 
             Hide();
-
+            
             form.Activate(this);
         }
 
@@ -71,9 +71,9 @@ namespace DBMS
             Init();
         }
 
-        private void textbox_password_TextChanged(object sender, EventArgs e) {}
+        private void Textbox_password_TextChanged(object sender, EventArgs e) {}
 
-        private void textbox_password_KeyDown(object sender, KeyEventArgs e)
+        private void Textbox_password_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode.Equals(Keys.Enter))
             {
@@ -83,15 +83,22 @@ namespace DBMS
 
         public void Activate(Form sender)
         {
-            Show();
-
             previousForm = sender;
+
+            Show();
         }
 
         private void LoginPage_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(previousForm != null && !previousForm.IsDisposed)
-                previousForm.Dispose();
+            Destroy();
+
+            GC.Collect();
+        }
+
+        public void Destroy()
+        {
+            Dispose();
+            Close();
         }
     }
 }

@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[Members] (
+    [id]                     INT           IDENTITY (1, 1) NOT NULL,
+    [payment_id]             INT           NULL,
+    [permission_id]          INT           NULL,
+    [name]                   VARCHAR (25)  NULL,
+    [surname]                VARCHAR (25)  NULL,
+    [gender]                 CHAR (1)      NULL,
+    [age]                    SMALLINT      NULL,
+    [email]                  VARCHAR (75)  NULL,
+    [phone_number]           BIGINT        NULL,
+    [address]                VARCHAR (160) NULL,
+    [height]                 SMALLINT      NULL,
+    [weight]                 SMALLINT      NULL,
+    [birth_date]             DATE          NULL,
+    [date_joined]            DATE          NULL,
+    [membership_expiry_date] DATE          NULL,
+    [weekly_entrance_right]  SMALLINT      NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC),
+	FOREIGN KEY (payment_id) REFERENCES Payments(id),
+	FOREIGN KEY (permission_id) REFERENCES Permissions(id),
+);
+

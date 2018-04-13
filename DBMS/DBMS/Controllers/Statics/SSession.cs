@@ -27,6 +27,8 @@ namespace DBMS.Controllers
             name = "";
             isManager = false;
 
+            stopWatch.Reset();
+
             stopWatch.Stop();
         }
 

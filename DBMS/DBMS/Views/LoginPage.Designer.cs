@@ -100,8 +100,8 @@
             this.textbox_password.Name = "textbox_password";
             this.textbox_password.Size = new System.Drawing.Size(200, 30);
             this.textbox_password.TabIndex = 5;
-            this.textbox_password.TextChanged += new System.EventHandler(this.textbox_password_TextChanged);
-            this.textbox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_password_KeyDown);
+            this.textbox_password.TextChanged += new System.EventHandler(this.Textbox_password_TextChanged);
+            this.textbox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Textbox_password_KeyDown);
             // 
             // LoginPage
             // 

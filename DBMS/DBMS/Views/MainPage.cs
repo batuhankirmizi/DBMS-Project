@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using DBMS.Controllers;
 using DBMS.Controllers.DB;
+using DBMS.Controllers.Interfaces;
 
 namespace DBMS.Views
 {
@@ -13,6 +14,7 @@ namespace DBMS.Views
         private User user;
 
         private Form previousForm;
+        private LoginPage loginPage;
 
         private LinkedList<Button> managerButtons = new LinkedList<Button>();
         
@@ -25,15 +27,22 @@ namespace DBMS.Views
 
         public void Activate(Form sender)
         {
+            Activate();
+
+            if(sender is LoginPage)
+                loginPage = (LoginPage) sender;
             previousForm = sender;
 
             user = new User(SSession.username, SSession.name, SSession.isManager);
 
-            label_welcome.Text += user.Name;
+            if(!label_welcome.Text.Contains(user.Name))
+                label_welcome.Text += user.Name;
 
             controller = new MainPageController();
 
             Show();
+
+            controller.Control();
         }
 
         public void NavigateTo(IViewHandler form)
@@ -47,65 +56,67 @@ namespace DBMS.Views
         {
             controller.Logout();
 
-            if(previousForm != null && !previousForm.IsDisposed)
-                previousForm.Dispose();
+            Destroy();
+
+            GC.Collect();
         }
 
         private void MainPage_Load(object sender, EventArgs e)
         {
-            // Make the form non-resizable and maximized
-            Width = Screen.PrimaryScreen.WorkingArea.Width;
-            Height = Screen.PrimaryScreen.WorkingArea.Height;
-
             // Add manager buttons
-            managerButtons.AddLast(button_add_employee);
-            managerButtons.AddLast(button_edit_employees);
+            managerButtons.AddLast(button_employees);
+            managerButtons.AddLast(button_login_history);
+            managerButtons.AddLast(button_permissions);
+            managerButtons.AddLast(button_roles);
+            managerButtons.AddLast(button_salaries);
+            managerButtons.AddLast(button_analytics);
 
             if (user.Is_manager)
-            {
                 foreach (Button button in managerButtons)
-                {
                     button.Visible = true;
-                }
-            }
 
             // Add general buttons
             generalButtons.AddLast(button_back);
             generalButtons.AddLast(button_elapsed_time);
+            generalButtons.AddLast(button_members);
+            generalButtons.AddLast(button_payments);
+            generalButtons.AddLast(button_facilities);
+            generalButtons.AddLast(button_member_improvements);
+            generalButtons.AddLast(button_memberships);
         }
 
         protected override void WndProc(ref Message message)
         {
-            const int WM_SYSCOMMAND = 0x0112;
-            const int SC_MOVE = 0xF010;
-
-            switch (message.Msg)
-            {
-                case WM_SYSCOMMAND:
-                    int command = message.WParam.ToInt32() & 0xfff0;
-                    if (command == SC_MOVE)
-                        return;
-                    break;
-            }
-
             base.WndProc(ref message);
         }
 
-        private void button_back_Click(object sender, EventArgs e)
+        private void Button_back_Click(object sender, EventArgs e)
         {
             controller.Logout();
 
-            NavigateTo((IViewHandler) previousForm);
+            NavigateTo(loginPage);
         }
 
-        private void button_add_employee_Click(object sender, EventArgs e)
+        public void Destroy()
         {
+            Dispose();
+            Close();
 
+            loginPage.Destroy();
+            if(previousForm != loginPage && !previousForm.IsDisposed)
+                ((IViewHandler)previousForm).Destroy();
         }
 
-        private void button_elapsed_time_Click(object sender, EventArgs e)
+        private void Button_elapsed_time_Click(object sender, EventArgs e)
         {
             MessageBox.Show(SSession.GetElapsedTime());
+        }
+
+        private void Button_members_Click(object sender, EventArgs e)
+        {
+            MembersPage members = new MembersPage();
+
+            NavigateTo(members);
         }
     }
 }

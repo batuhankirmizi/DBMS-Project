@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data.Common;
 using DBMS.Controllers.Interfaces;
+using System;
 
 namespace DBMS.Controllers
 {
@@ -10,7 +11,7 @@ namespace DBMS.Controllers
         private DbProviderFactory factory = DbProviderFactories.GetFactory(ConfigurationManager.AppSettings["provider"]);
 
         private DbDataReader reader;
-        public DbDataReader Reader { get => reader; set => reader = value; }
+        protected DbDataReader Reader { get => reader; set => reader = value; }
 
         protected DbConnection connection;
 
@@ -18,22 +19,26 @@ namespace DBMS.Controllers
 
         public Controller() { }
 
+        /// <summary>
+        /// Connects to the specified database
+        /// </summary>
+        /// <param name="databaseName">Name of the database</param>
         public virtual void Connect(string databaseName)
         {
-            if (!DatabaseExists(databaseName))
+            string connectionString = "Data Source=BATU-PC;Initial Catalog=" + databaseName + ";Integrated Security=True;Pooling=False";
+
+            connection = factory.CreateConnection();
+            connection.ConnectionString = connectionString;
+
+            if(connection == null)
             {
-                MessageBox.Show("Database Connection Error! " + databaseName + " cannot be found.");
-            } else {
-                string connectionString = "Data Source=BATU-PC;Initial Catalog=" + databaseName + ";Integrated Security=True;Pooling=False";
-
-                connection = factory.CreateConnection();
-                connection.ConnectionString = connectionString;
-
-                connection.Open();
+                MessageBox.Show("Cannot connect to the datatabase: " + databaseName);
+                return;
             }
+
+            connection.Open();
         }
 
-        // TODO:
         /// <summary>
         /// Executes the given SQL Query
         /// </summary>
@@ -56,21 +61,25 @@ namespace DBMS.Controllers
         /// <returns> true if the data is validated </returns>
         public abstract bool Control();
 
-        protected virtual bool DatabaseExists(string databaseName) => true;
-
         public void Disconnect()
         {
-           connection.Close();
+            if(connection != null)
+                connection.Close();
         }
 
         public void Log(int admin_id, string username, string logDetails)
         {
-            ExecuteQuery(SDBQueries.LOGIN_HISTORY_QUERY + admin_id + "', '" + username + "', '" + logDetails + "')");
+            using(reader = ExecuteQuery(SDBQueries.LOGIN_HISTORY_QUERY + admin_id + "', '" + username + "', '" + logDetails + "')"))
+            {
+                reader.Close();
+            }
         }
 
         public void FailLog(string username, string logDetails)
         {
             ExecuteQuery(SDBQueries.LOGIN_HISTORY_QUERY_FAILED + username + "', '" + logDetails + "')");
+
+            reader.Close();
         }
     }
 }

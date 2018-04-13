@@ -6,7 +6,8 @@ namespace DBMS.Controllers
     {
         public override bool Control()
         {
-            throw new System.NotImplementedException();
+            Disconnect();
+            return connection == null;
         }
 
         public void Logout()

@@ -38,24 +38,26 @@ namespace DBMS.Controllers
 
         public bool Validate(string username, string password)
         {
-            Reader = base.ExecuteQuery(SDBQueries.LOGIN_QUERY);
-            while (Reader.Read())
+            using(Reader = base.ExecuteQuery(SDBQueries.LOGIN_QUERY))
             {
-                if (Reader["username"].ToString().Equals(username) && Reader["password"].ToString().Equals(password))
+                while (Reader.Read())
                 {
-                    user = new User(Reader["id"].ToString(), Reader["username"].ToString(), Reader["password"].ToString(), Reader["name"].ToString(), Boolean.Parse(Reader["is_manager"].ToString()));
+                    if (Reader["username"].ToString().Equals(username) && Reader["password"].ToString().Equals(password))
+                    {
+                        user = new User(Reader["id"].ToString(), Reader["username"].ToString(), Reader["password"].ToString(), Reader["name"].ToString(), Boolean.Parse(Reader["is_manager"].ToString()));
 
-                    Login(user.Username, user.Name, user.Is_manager);
+                        Login(user.Username, user.Name, user.Is_manager);
 
-                    Reader.Close();
+                        Reader.Close();
 
-                    Log(Int32.Parse(user.Id), user.Username, "Log In Successful on " + DateTime.UtcNow.Date.ToString("dd/MM/yyyy") + " at " + DateTime.Now.ToString("h:mm:ss tt") );
+                        Log(Int32.Parse(user.Id), user.Username, "Log In Successful on " + DateTime.UtcNow.Date.ToString("dd/MM/yyyy") + " at " + DateTime.Now.ToString("h:mm:ss tt"));
 
-                    return true;
+                        return true;
+                    }
                 }
-            }
 
-            Reader.Close();
+                Reader.Close();
+            }
 
             FailLog(username, "Log In failed on " + DateTime.UtcNow.Date.ToString("dd/MM/yyyy") + " at " + DateTime.Now.ToString("h:mm:ss tt"));
 

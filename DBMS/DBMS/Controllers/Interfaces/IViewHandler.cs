@@ -1,9 +1,8 @@
 ﻿using System.Windows.Forms;
-using DBMS.Controllers.DB;
 
-namespace DBMS.Controllers
+namespace DBMS.Controllers.Interfaces
 {
-    public interface IViewHandler
+    public interface IViewHandler : IDestroyable
     {
         /// <summary>
         /// Navigates to the given form.
