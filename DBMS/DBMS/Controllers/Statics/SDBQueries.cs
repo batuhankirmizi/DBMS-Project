@@ -7,6 +7,16 @@
 
     public static readonly string LOGIN_HISTORY_QUERY_FAILED  = "INSERT INTO " + SDBTables.ADMINISTRATION_LOGIN_HISTORY + " (username, log_details) VALUES('";
 
+    // Main Page queries
+    public static readonly string MAIN_GET_MEMBER_COUNT = "SELECT COUNT(*) AS c FROM " + SDBTables.MAINDB_MEMBERS;
+    public static readonly string MAIN_GET_FACILITY_COUNT = "SELECT COUNT(*) AS c FROM " + SDBTables.MAINDB_FACILITIES;
+    public static readonly string MAIN_GET_EMPLOYEE_COUNT = "SELECT COUNT(*) AS c FROM " + SDBTables.MAINDB_EMPLOYEES;
+    public static readonly string MAIN_GET_UNPAID_PAYMENT_COUNT = "SELECT COUNT(*) AS c FROM " + SDBTables.MAINDB_PAYMENTS + " WHERE is_paid = 0";
+    public static readonly string MAIN_GET_COURSE_COUNT = "SELECT COUNT(*) AS c FROM " + SDBTables.MAINDB_COURSES;
+    public static readonly string MAIN_GET_MEMBERSHIPS_ABOUT_TO_EXPIRE = "SELECT COUNT(membership_expiry_date) as c FROM " + SDBTables.MAINDB_MEMBERS + " WHERE DATEDIFF(day, getdate(), membership_expiry_date) < 10";
+    public static readonly string MAIN_GET_EQUIPMENT_COUNT = "SELECT COUNT(*) AS c FROM " + SDBTables.MAINDB_EQUIPMENTS;
+    public static readonly string MAIN_GET_OUT_OF_WARRANTY_EQUIPMENT = "SELECT COUNT(warranty) as c FROM " + SDBTables.MAINDB_EQUIPMENTS + " WHERE DATEDIFF(day, getdate(), DATEADD(year, warranty, date_of_arrival)) < 0";
+
     // Member Page queries
     public static readonly string MEMBER_GET_MEMBERS_QUERY = "SELECT id, name FROM " + SDBTables.MAINDB_MEMBERS;
     public static readonly string MEMBER_GET_ID = "SELECT id FROM " + SDBTables.MAINDB_MEMBERS + " WHERE payment_id = ";

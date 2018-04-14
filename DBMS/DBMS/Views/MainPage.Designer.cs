@@ -32,9 +32,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_elapsed_time = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.button_members = new System.Windows.Forms.Button();
             this.button_payments = new System.Windows.Forms.Button();
             this.button_facilities = new System.Windows.Forms.Button();
@@ -42,25 +39,37 @@
             this.button_courses = new System.Windows.Forms.Button();
             this.button_member_improvements = new System.Windows.Forms.Button();
             this.button_memberships = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button_employees = new System.Windows.Forms.Button();
             this.button_login_history = new System.Windows.Forms.Button();
             this.button_permissions = new System.Windows.Forms.Button();
             this.button_roles = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button_back = new System.Windows.Forms.Button();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.button_salaries = new System.Windows.Forms.Button();
             this.button_analytics = new System.Windows.Forms.Button();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label_quick_info = new System.Windows.Forms.Label();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label_quick_info2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_welcome
             // 
             this.label_welcome.AutoSize = true;
             this.label_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label_welcome.Location = new System.Drawing.Point(69, 0);
+            this.label_welcome.Location = new System.Drawing.Point(72, 4);
+            this.label_welcome.Margin = new System.Windows.Forms.Padding(4);
             this.label_welcome.Name = "label_welcome";
             this.label_welcome.Size = new System.Drawing.Size(210, 46);
             this.label_welcome.TabIndex = 0;
@@ -75,8 +84,8 @@
             this.tableLayoutPanel1.Controls.Add(this.button_elapsed_time, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -86,6 +95,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1723, 720);
             this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // button_elapsed_time
             // 
@@ -118,37 +128,6 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(1195, 430);
             this.flowLayoutPanel3.TabIndex = 6;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.button_back);
-            this.flowLayoutPanel1.Controls.Add(this.label_welcome);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1195, 57);
-            this.flowLayoutPanel1.TabIndex = 6;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowLayoutPanel2.Controls.Add(this.button_employees);
-            this.flowLayoutPanel2.Controls.Add(this.button_login_history);
-            this.flowLayoutPanel2.Controls.Add(this.button_permissions);
-            this.flowLayoutPanel2.Controls.Add(this.button_roles);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1205, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(514, 231);
-            this.flowLayoutPanel2.TabIndex = 6;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowLayoutPanel4.Controls.Add(this.button_salaries);
-            this.flowLayoutPanel4.Controls.Add(this.button_analytics);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(1204, 240);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(516, 430);
-            this.flowLayoutPanel4.TabIndex = 8;
             // 
             // button_members
             // 
@@ -270,6 +249,18 @@
             this.button_memberships.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_memberships.UseVisualStyleBackColor = false;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.flowLayoutPanel2.Controls.Add(this.button_employees);
+            this.flowLayoutPanel2.Controls.Add(this.button_login_history);
+            this.flowLayoutPanel2.Controls.Add(this.button_permissions);
+            this.flowLayoutPanel2.Controls.Add(this.button_roles);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1205, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(514, 231);
+            this.flowLayoutPanel2.TabIndex = 6;
+            // 
             // button_employees
             // 
             this.button_employees.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -350,6 +341,15 @@
             this.button_roles.UseVisualStyleBackColor = false;
             this.button_roles.Visible = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button_back);
+            this.flowLayoutPanel1.Controls.Add(this.label_welcome);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1188, 50);
+            this.flowLayoutPanel1.TabIndex = 6;
+            // 
             // button_back
             // 
             this.button_back.BackColor = System.Drawing.SystemColors.Highlight;
@@ -358,12 +358,23 @@
             this.button_back.FlatAppearance.BorderSize = 0;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.Image = global::DBMS.Properties.Resources.back_arrow_white;
-            this.button_back.Location = new System.Drawing.Point(3, 3);
+            this.button_back.Location = new System.Drawing.Point(4, 4);
+            this.button_back.Margin = new System.Windows.Forms.Padding(4);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(60, 40);
             this.button_back.TabIndex = 2;
             this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Click += new System.EventHandler(this.Button_back_Click);
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.flowLayoutPanel4.Controls.Add(this.button_salaries);
+            this.flowLayoutPanel4.Controls.Add(this.button_analytics);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(1204, 240);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(516, 430);
+            this.flowLayoutPanel4.TabIndex = 8;
             // 
             // button_salaries
             // 
@@ -407,6 +418,55 @@
             this.button_analytics.UseVisualStyleBackColor = false;
             this.button_analytics.Visible = false;
             // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel1);
+            this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel6);
+            this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel7);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(1195, 231);
+            this.flowLayoutPanel5.TabIndex = 7;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.label_quick_info);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 59);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(599, 170);
+            this.flowLayoutPanel6.TabIndex = 7;
+            // 
+            // label_quick_info
+            // 
+            this.label_quick_info.AutoSize = true;
+            this.label_quick_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label_quick_info.Location = new System.Drawing.Point(8, 8);
+            this.label_quick_info.Margin = new System.Windows.Forms.Padding(8);
+            this.label_quick_info.Name = "label_quick_info";
+            this.label_quick_info.Size = new System.Drawing.Size(256, 31);
+            this.label_quick_info.TabIndex = 0;
+            this.label_quick_info.Text = "Currently, Gym has:";
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Controls.Add(this.label_quick_info2);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(608, 59);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(583, 170);
+            this.flowLayoutPanel7.TabIndex = 8;
+            // 
+            // label_quick_info2
+            // 
+            this.label_quick_info2.AutoSize = true;
+            this.label_quick_info2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label_quick_info2.Location = new System.Drawing.Point(8, 8);
+            this.label_quick_info2.Margin = new System.Windows.Forms.Padding(8);
+            this.label_quick_info2.Name = "label_quick_info2";
+            this.label_quick_info2.Size = new System.Drawing.Size(256, 31);
+            this.label_quick_info2.TabIndex = 0;
+            this.label_quick_info2.Text = "Currently, Gym has:";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -424,11 +484,16 @@
             this.Load += new System.EventHandler(this.MainPage_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,5 +522,10 @@
         private System.Windows.Forms.Button button_salaries;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Button button_analytics;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        protected System.Windows.Forms.Label label_quick_info;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
+        private System.Windows.Forms.Label label_quick_info2;
     }
 }

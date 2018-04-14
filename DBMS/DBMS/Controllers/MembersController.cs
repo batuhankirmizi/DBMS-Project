@@ -174,8 +174,6 @@ namespace DBMS.Controllers
 
                 if(iter.Value.ToString().Equals("name"))
                     query += iter.Value.ToString() + " = '" + newMember.Name + "'";
-                if (iter.Value.ToString().Equals("permission_id"))
-                    query += iter.Value.ToString() + " = '" + newMember.Permission_id + "'";
                 if (iter.Value.ToString().Equals("surname"))
                     query += iter.Value.ToString() + " = '" + newMember.Surname + "'";
                 if (iter.Value.ToString().Equals("gender"))
@@ -192,16 +190,10 @@ namespace DBMS.Controllers
                     query += iter.Value.ToString() + " = '" + newMember.DateJoined + "'";
                 if (iter.Value.ToString().Equals("birth_date"))
                     query += iter.Value.ToString() + " = '" + newMember.BirthDate + "'";
-                if (iter.Value.ToString().Equals("payment_id"))
-                    query += iter.Value.ToString() + " = '" + newMember.Payment_id + "'";
                 if (iter.Value.ToString().Equals("height"))
                     query += iter.Value.ToString() + " = '" + newMember.Height + "'";
                 if (iter.Value.ToString().Equals("weight"))
                     query += iter.Value.ToString() + " = '" + newMember.Weight + "'";
-                if (iter.Value.ToString().Equals("membership_expiry_date"))
-                    query += iter.Value.ToString() + " = '" + newMember.MembershipExpiryDate + "'";
-                if (iter.Value.ToString().Equals("weekly_entrance_right"))
-                    query += iter.Value.ToString() + " = '" + newMember.WeeklyEntranceRight + "'";
 
                 iter = iter.Next;
             }

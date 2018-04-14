@@ -11,4 +11,12 @@
     public static string MAINDB_PAYMENTS = "Payments";
 
     public static string MAINDB_PERMISSIONS = "Perms";
+
+    public static string MAINDB_EMPLOYEES = "Employees";
+
+    public static string MAINDB_FACILITIES = "Facilities";
+
+    public static string MAINDB_COURSES = "Courses";
+
+    public static string MAINDB_EQUIPMENTS = "Equipments";
 }

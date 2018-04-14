@@ -65,8 +65,6 @@ namespace DBMS.Controllers.DB
         {
             LinkedList<string> toReturn = new LinkedList<string>();
 
-            if (Permission_id != member.Permission_id)
-                toReturn.AddLast("permission_id");
             if (!Name.Equals(member.Name))
                 toReturn.AddLast("name");
             if (!Surname.Equals(member.Surname))
@@ -85,16 +83,10 @@ namespace DBMS.Controllers.DB
                 toReturn.AddLast("date_joined");
             if (!BirthDate.Equals(member.BirthDate))
                 toReturn.AddLast("birth_date");
-            if (Payment_id != member.Payment_id)
-                toReturn.AddLast("payment_id");
             if (height != member.height)
                 toReturn.AddLast("height");
             if (weight != member.weight)
                 toReturn.AddLast("weight");
-            if (!membershipExpiryDate.Equals(member.membershipExpiryDate))
-                toReturn.AddLast("membership_expiry_date");
-            if (weeklyEntranceRight != member.weeklyEntranceRight)
-                toReturn.AddLast("weekly_entrance_right");
 
             return toReturn;
         }

@@ -43,6 +43,10 @@ namespace DBMS.Views
             Show();
 
             controller.Control();
+
+            label_quick_info.Text = "Currently, Gym has:";
+            label_quick_info2.Text = "\n";
+            AddQuickInfo();
         }
 
         public void NavigateTo(IViewHandler form)
@@ -117,6 +121,24 @@ namespace DBMS.Views
             MembersPage members = new MembersPage();
 
             NavigateTo(members);
+        }
+        
+        private void AddQuickInfo()
+        {
+            label_quick_info.Text += "\n" + controller.GetMemberCount() + " Members\n";
+            label_quick_info.Text += controller.GetEmployeeCount() + " Employees\n";
+            label_quick_info.Text += controller.GetFacilityCount() + " Facilities\n";
+            label_quick_info.Text += controller.GetUnpaidPaymentCount() + " Unpaid Payments";
+
+            label_quick_info2.Text += controller.GetCourseCount() + " Courses\n";
+            label_quick_info2.Text += controller.GetMembershipsAboutToFinish() + " Memberships less than 10 days to expire\n";
+            label_quick_info2.Text += controller.GetEquipmentCount() + " Equipments\n";
+            label_quick_info2.Text += controller.GetOutOfWarrantyEquipmentCount() + " Equipments which has expired warranty";
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

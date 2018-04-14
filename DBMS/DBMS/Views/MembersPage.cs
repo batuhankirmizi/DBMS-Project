@@ -101,7 +101,10 @@ namespace DBMS.Views
                 button_delete.Visible = false;
 
                 foreach(TextBox textBox in textBoxes)
+                {
                     textBox.Text = "";
+                    textBox.Enabled = true;
+                }
             }
             else {
                 // Get member from the database
@@ -118,9 +121,13 @@ namespace DBMS.Views
                 textbox_height.Text = member.Height.ToString();
                 textbox_weight.Text = member.Weight.ToString();
                 textbox_mem_duration.Text = Math.Abs(member.DateJoined.Month - member.MembershipExpiryDate.Month).ToString();
+                textbox_mem_duration.Enabled = false;
                 textbox_weekly_entrance_right.Text = member.WeeklyEntranceRight.ToString();
+                textbox_weekly_entrance_right.Enabled = false;
                 textbox_monthly_payment.Text = (Int32.Parse(controller.GetMonthlyPayment(member).ToString()) / Int32.Parse(Math.Abs(member.DateJoined.Month - member.MembershipExpiryDate.Month).ToString())).ToString();
+                textbox_monthly_payment.Enabled = false;
                 textbox_permission_level.Text = controller.GetPermissionLevel(member).ToString();
+                textbox_permission_level.Enabled = false;
                 date_birth.Value = member.BirthDate;
                 date_joined.Value = member.DateJoined;
 
