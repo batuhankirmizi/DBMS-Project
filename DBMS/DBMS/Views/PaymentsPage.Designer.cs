@@ -75,7 +75,7 @@
             this.button_back.FlatAppearance.BorderSize = 0;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.Image = global::DBMS.Properties.Resources.back_arrow_white;
-            this.button_back.Location = new System.Drawing.Point(3, 14);
+            this.button_back.Location = new System.Drawing.Point(12, 12);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(60, 40);
             this.button_back.TabIndex = 4;

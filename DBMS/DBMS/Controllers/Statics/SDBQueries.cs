@@ -48,4 +48,13 @@
     public static readonly string PAYMENT_GET_ID = "SELECT id FROM " + SDBTables.MAINDB_PAYMENTS + " WHERE amount = ";
     public static readonly string PAYMENT_GET_PAYMENT = "SELECT * FROM " + SDBTables.MAINDB_PAYMENTS + " WHERE id = ";
     public static readonly string PAYMENT_CHANGE = "UPDATE " + SDBTables.MAINDB_PAYMENTS + " SET";
+
+    // Facilities Page queries
+    public static readonly string FACILITIES_GET_FACILITIES = "SELECT * FROM " + SDBTables.MAINDB_FACILITIES;
+    public static readonly string FACILITIES_GET_FACILITY = "SELECT * FROM " + SDBTables.MAINDB_FACILITIES + " WHERE name = '";
+    public static readonly string FACILITIES_GET_PERMISSION_ID = "SELECT id FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE facility_access_level = '";
+    public static readonly string FACILITIES_GET_PERMISSION = "SELECT * FROM " + SDBTables.MAINDB_FACILITIES + " JOIN " + SDBTables.MAINDB_PERMISSIONS + " ON Facilities.permission_id = Perms.id WHERE name = '";
+    public static readonly string FACILITIES_ADD_FACILTIY = "INSERT INTO " + SDBTables.MAINDB_FACILITIES + "(permission_id, name) VALUES('";
+    public static readonly string FACILITIES_ADD_PERMISSION = "INSERT INTO " + SDBTables.MAINDB_PERMISSIONS + "(facility_access_level) VALUES('";
+    public static readonly string FACILITIES_CHANGE_FACILITY = "UPDATE " + SDBTables.MAINDB_FACILITIES + " SET";
 }

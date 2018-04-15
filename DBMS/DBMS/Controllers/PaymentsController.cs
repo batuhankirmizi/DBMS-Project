@@ -41,6 +41,8 @@ namespace DBMS.Controllers
                     toReturn.AddLast(new Payment(Int32.Parse(Reader["amount"].ToString()), DateTime.Parse(Reader["payment_due_date"].ToString()),
                         Reader["description"].ToString(), Boolean.Parse(Reader["is_paid"].ToString())));
                 }
+
+                Reader.Close();
             }
 
             return toReturn;
@@ -53,6 +55,8 @@ namespace DBMS.Controllers
             {
                 while (Reader.Read())
                     toReturn.AddLast(Reader["id"] + " - " + Reader["name"] + " " + Reader["surname"]);
+
+                Reader.Close();
             }
 
             return toReturn;
@@ -81,9 +85,9 @@ namespace DBMS.Controllers
             using(Reader = ExecuteQuery(SDBQueries.PAYMENT_GET_PAYMENT + paymentId))
             {
                 while (Reader.Read())
-                {
                     payment = new Payment(Int32.Parse(Reader["amount"].ToString()), DateTime.Parse(Reader["payment_due_date"].ToString()), Reader["description"].ToString(), Boolean.Parse(Reader["is_paid"].ToString()));
-                }
+
+                Reader.Close();
             }
 
             return payment;

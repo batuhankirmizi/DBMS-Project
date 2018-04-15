@@ -13,8 +13,9 @@ namespace DBMS.Views
 
         private User user;
 
+        private Form loginPage;
+
         private Form previousForm;
-        private LoginPage loginPage;
 
         private LinkedList<Button> managerButtons = new LinkedList<Button>();
         
@@ -29,14 +30,14 @@ namespace DBMS.Views
         {
             Activate();
 
-            if(sender is LoginPage)
-                loginPage = (LoginPage) sender;
-            previousForm = sender;
+            if(sender.Name.Equals("LoginPage")) loginPage = sender;
 
             user = new User(SSession.username, SSession.name, SSession.isManager);
 
             if(!label_welcome.Text.Contains(user.Name))
                 label_welcome.Text += user.Name;
+
+            previousForm = sender;
 
             controller = new MainPageController();
 
@@ -98,7 +99,7 @@ namespace DBMS.Views
         {
             controller.Logout();
 
-            NavigateTo(loginPage);
+            NavigateTo((IViewHandler)loginPage);
         }
 
         public void Destroy()
@@ -106,9 +107,10 @@ namespace DBMS.Views
             Dispose();
             Close();
 
-            loginPage.Destroy();
-            if(previousForm != loginPage && !previousForm.IsDisposed)
-                ((IViewHandler)previousForm).Destroy();
+            previousForm.Dispose();
+
+            if(!loginPage.IsDisposed)
+                loginPage.Dispose();
         }
 
         private void Button_elapsed_time_Click(object sender, EventArgs e)
@@ -146,6 +148,13 @@ namespace DBMS.Views
             PaymentsPage payments = new PaymentsPage();
 
             NavigateTo(payments);
+        }
+
+        private void Button_facilities_Click(object sender, EventArgs e)
+        {
+            FacilitiesPage facilities = new FacilitiesPage();
+
+            NavigateTo(facilities);
         }
     }
 }

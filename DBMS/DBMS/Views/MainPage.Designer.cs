@@ -181,6 +181,7 @@
             this.button_facilities.Text = "Facilities";
             this.button_facilities.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_facilities.UseVisualStyleBackColor = false;
+            this.button_facilities.Click += new System.EventHandler(this.Button_facilities_Click);
             // 
             // button_equipments
             // 
