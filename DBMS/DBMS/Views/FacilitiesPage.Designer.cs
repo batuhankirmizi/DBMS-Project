@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox = new System.Windows.Forms.ComboBox();
-            this.button_back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_add = new System.Windows.Forms.Button();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_permission = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_back = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,21 +62,6 @@
             this.comboBox.Size = new System.Drawing.Size(679, 37);
             this.comboBox.TabIndex = 6;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
-            // 
-            // button_back
-            // 
-            this.button_back.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_back.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button_back.FlatAppearance.BorderSize = 0;
-            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_back.Image = global::DBMS.Properties.Resources.back_arrow_white;
-            this.button_back.Location = new System.Drawing.Point(12, 12);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(60, 40);
-            this.button_back.TabIndex = 5;
-            this.button_back.UseVisualStyleBackColor = false;
-            this.button_back.Click += new System.EventHandler(this.Button_back_Click);
             // 
             // panel2
             // 
@@ -152,6 +137,21 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Permission";
             // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_back.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button_back.FlatAppearance.BorderSize = 0;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_back.Image = global::DBMS.Properties.Resources.back_arrow_white;
+            this.button_back.Location = new System.Drawing.Point(12, 12);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(60, 40);
+            this.button_back.TabIndex = 5;
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.Button_back_Click);
+            // 
             // FacilitiesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,7 +163,7 @@
             this.Name = "FacilitiesPage";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FacilitiesPage";
+            this.Text = "Facilities";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FacilitiesPage_FormClosing);
             this.panel1.ResumeLayout(false);

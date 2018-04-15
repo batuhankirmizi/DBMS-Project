@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox = new System.Windows.Forms.ComboBox();
-            this.button_back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_change = new System.Windows.Forms.Button();
             this.comboBox_paid = new System.Windows.Forms.ComboBox();
@@ -41,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_back = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,21 +66,6 @@
             this.comboBox.Size = new System.Drawing.Size(679, 37);
             this.comboBox.TabIndex = 5;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
-            // 
-            // button_back
-            // 
-            this.button_back.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_back.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button_back.FlatAppearance.BorderSize = 0;
-            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_back.Image = global::DBMS.Properties.Resources.back_arrow_white;
-            this.button_back.Location = new System.Drawing.Point(12, 12);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(60, 40);
-            this.button_back.TabIndex = 4;
-            this.button_back.UseVisualStyleBackColor = false;
-            this.button_back.Click += new System.EventHandler(this.Button_back_Click);
             // 
             // panel2
             // 
@@ -200,6 +185,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Amount";
             // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_back.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button_back.FlatAppearance.BorderSize = 0;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_back.Image = global::DBMS.Properties.Resources.back_arrow_white;
+            this.button_back.Location = new System.Drawing.Point(12, 12);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(60, 40);
+            this.button_back.TabIndex = 4;
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.Button_back_Click);
+            // 
             // PaymentsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,7 +211,7 @@
             this.Name = "PaymentsPage";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PaymentsPage";
+            this.Text = "Payments";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PaymentsPage_FormClosing);
             this.Load += new System.EventHandler(this.PaymentsPage_Load);

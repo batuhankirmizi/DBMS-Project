@@ -302,6 +302,7 @@
             this.button_login_history.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_login_history.UseVisualStyleBackColor = false;
             this.button_login_history.Visible = false;
+            this.button_login_history.Click += new System.EventHandler(this.button_login_history_Click);
             // 
             // button_permissions
             // 

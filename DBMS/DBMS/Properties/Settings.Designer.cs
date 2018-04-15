@@ -32,5 +32,16 @@ namespace DBMS.Properties {
                 return ((string)(this["Main_DatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BATU-PC;Initial Catalog=Administration;Integrated Security=True;Pooli" +
+            "ng=False")]
+        public string AdministrationConnectionString {
+            get {
+                return ((string)(this["AdministrationConnectionString"]));
+            }
+        }
     }
 }

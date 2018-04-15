@@ -156,5 +156,12 @@ namespace DBMS.Views
 
             NavigateTo(facilities);
         }
+
+        private void button_login_history_Click(object sender, EventArgs e)
+        {
+            LoginHistoryPage loginHistory = new LoginHistoryPage();
+
+            NavigateTo(loginHistory);
+        }
     }
 }

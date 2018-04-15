@@ -88,6 +88,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministrationDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\DB\Employee.cs" />
     <Compile Include="Controllers\DB\Facility.cs" />
@@ -127,6 +132,12 @@
     <Compile Include="Views\FacilitiesPage.Designer.cs">
       <DependentUpon>FacilitiesPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoginHistoryPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginHistoryPage.Designer.cs">
+      <DependentUpon>LoginHistoryPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +172,9 @@
     <EmbeddedResource Include="Views\FacilitiesPage.resx">
       <DependentUpon>FacilitiesPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginHistoryPage.resx">
+      <DependentUpon>LoginHistoryPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +187,17 @@
     <EmbeddedResource Include="Views\PaymentsPage.resx">
       <DependentUpon>PaymentsPage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AdministrationDataSet.xsc">
+      <DependentUpon>AdministrationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AdministrationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdministrationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdministrationDataSet.xss">
+      <DependentUpon>AdministrationDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Main_DatabaseDataSet.xsc">
       <DependentUpon>Main_DatabaseDataSet.xsd</DependentUpon>
     </None>
