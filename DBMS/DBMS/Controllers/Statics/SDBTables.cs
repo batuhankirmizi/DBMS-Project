@@ -19,4 +19,8 @@
     public static string MAINDB_COURSES = "Courses";
 
     public static string MAINDB_EQUIPMENTS = "Equipments";
+
+    public static string MAINDB_MEMBERSHIPS = "Memberships";
+
+    public static string MAINDB_MEMBER_IMPROVEMENTS = "[Member Improvements]";
 }

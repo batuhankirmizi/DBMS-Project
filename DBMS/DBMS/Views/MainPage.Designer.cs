@@ -44,12 +44,12 @@
             this.button_login_history = new System.Windows.Forms.Button();
             this.button_permissions = new System.Windows.Forms.Button();
             this.button_roles = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button_back = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.button_salaries = new System.Windows.Forms.Button();
             this.button_analytics = new System.Windows.Forms.Button();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button_back = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.label_quick_info = new System.Windows.Forms.Label();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
@@ -57,9 +57,9 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +95,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1723, 720);
             this.tableLayoutPanel1.TabIndex = 5;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
             // button_elapsed_time
             // 
@@ -163,6 +163,7 @@
             this.button_payments.Text = "Payments";
             this.button_payments.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_payments.UseVisualStyleBackColor = false;
+            this.button_payments.Click += new System.EventHandler(this.Button_payments_Click);
             // 
             // button_facilities
             // 
@@ -341,31 +342,6 @@
             this.button_roles.UseVisualStyleBackColor = false;
             this.button_roles.Visible = false;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.button_back);
-            this.flowLayoutPanel1.Controls.Add(this.label_welcome);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1188, 50);
-            this.flowLayoutPanel1.TabIndex = 6;
-            // 
-            // button_back
-            // 
-            this.button_back.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_back.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button_back.FlatAppearance.BorderSize = 0;
-            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_back.Image = global::DBMS.Properties.Resources.back_arrow_white;
-            this.button_back.Location = new System.Drawing.Point(4, 4);
-            this.button_back.Margin = new System.Windows.Forms.Padding(4);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(60, 40);
-            this.button_back.TabIndex = 2;
-            this.button_back.UseVisualStyleBackColor = false;
-            this.button_back.Click += new System.EventHandler(this.Button_back_Click);
-            // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -429,6 +405,31 @@
             this.flowLayoutPanel5.Size = new System.Drawing.Size(1195, 231);
             this.flowLayoutPanel5.TabIndex = 7;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button_back);
+            this.flowLayoutPanel1.Controls.Add(this.label_welcome);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1188, 50);
+            this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // button_back
+            // 
+            this.button_back.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_back.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button_back.FlatAppearance.BorderSize = 0;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_back.Image = global::DBMS.Properties.Resources.back_arrow_white;
+            this.button_back.Location = new System.Drawing.Point(4, 4);
+            this.button_back.Margin = new System.Windows.Forms.Padding(4);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(60, 40);
+            this.button_back.TabIndex = 2;
+            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.Button_back_Click);
+            // 
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.Controls.Add(this.label_quick_info);
@@ -485,11 +486,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
             this.flowLayoutPanel7.ResumeLayout(false);

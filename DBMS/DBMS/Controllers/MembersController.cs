@@ -26,7 +26,7 @@ namespace DBMS.Controllers
                 LinkedList<string> toReturn = new LinkedList<string>();
 
                 for (int i = 0; Reader.Read(); i++)
-                    toReturn.AddLast(Reader["id"].ToString() + " - " + Reader["name"].ToString());
+                    toReturn.AddLast(Reader["id"].ToString() + " - " + Reader["name"].ToString() + " " + Reader["surname"].ToString());
 
                 Reader.Close();
 
@@ -204,6 +204,8 @@ namespace DBMS.Controllers
 
         internal void DeleteMember(Member member)
         {
+            using (Reader = ExecuteQuery(SDBQueries.MEMBER_DELETE_MEMBERSHIP + member.Payment_id.ToString()))
+                Reader.Close();
             using (Reader = ExecuteQuery(SDBQueries.MEMBER_DELETE_MEMBER + GetMemberId(member).ToString()))
                 Reader.Close();
             using (Reader = ExecuteQuery(SDBQueries.MEMBER_DELETE_PAYMENT + member.Payment_id.ToString()))
@@ -222,6 +224,24 @@ namespace DBMS.Controllers
 
                 return toReturn;
             }
+        }
+
+        internal void AddMembership(Member member)
+        {
+            string query = SDBQueries.MEMBER_ADD_MEMBERSHIP + GetMemberId(member).ToString() + "', '" + member.Payment_id + "', '" + member.MembershipExpiryDate + "', '" +
+                member.WeeklyEntranceRight + "');";
+
+            using (Reader = ExecuteQuery(query))
+            {
+                Reader.Close();
+            }
+        }
+
+        internal void AddMemberImprovement(Member member)
+        {
+            string query = SDBQueries.MEMBER_ADD_MEMBER_IMPROVEMENTS + GetMemberId(member) + "', '" + member.Weight + "', '" + member.Height + "', '" + member.DateJoined +"');";
+            using(Reader = ExecuteQuery(query))
+                Reader.Close();
         }
     }
 }

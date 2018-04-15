@@ -33,6 +33,7 @@
             this.combo_box = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_delete = new System.Windows.Forms.Button();
             this.comboBox_gender = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textbox_permission_level = new System.Windows.Forms.TextBox();
@@ -65,7 +66,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textbox_name = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button_delete = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -158,6 +158,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1519, 662);
             this.panel1.TabIndex = 2;
+            // 
+            // button_delete
+            // 
+            this.button_delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_delete.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_delete.FlatAppearance.BorderSize = 0;
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_delete.Location = new System.Drawing.Point(653, 571);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(244, 63);
+            this.button_delete.TabIndex = 33;
+            this.button_delete.Text = "DELETE";
+            this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Visible = false;
+            this.button_delete.Click += new System.EventHandler(this.Button_delete_Click);
             // 
             // comboBox_gender
             // 
@@ -522,24 +540,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1519, 79);
             this.panel2.TabIndex = 3;
-            // 
-            // button_delete
-            // 
-            this.button_delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_delete.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_delete.FlatAppearance.BorderSize = 0;
-            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button_delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_delete.Location = new System.Drawing.Point(653, 571);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(244, 63);
-            this.button_delete.TabIndex = 33;
-            this.button_delete.Text = "DELETE";
-            this.button_delete.UseVisualStyleBackColor = false;
-            this.button_delete.Visible = false;
-            this.button_delete.Click += new System.EventHandler(this.Button_delete_Click);
             // 
             // MembersPage
             // 

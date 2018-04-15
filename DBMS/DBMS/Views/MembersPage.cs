@@ -61,8 +61,6 @@ namespace DBMS.Views
 
         private void Members_FormClosing(object sender, FormClosingEventArgs e)
         {
-            controller.Logout();
-
             Destroy();
 
             GC.Collect();
@@ -83,7 +81,7 @@ namespace DBMS.Views
             Dispose();
             Close();
 
-            ((IViewHandler)previousForm).Destroy();
+            ((IViewHandler) previousForm).Destroy();
         }
 
         private void MembersPage_Load(object sender, EventArgs e)
@@ -119,7 +117,9 @@ namespace DBMS.Views
                 textbox_phone_number.Text = member.PhoneNumber.ToString();
                 textbox_address.Text = member.Address;
                 textbox_height.Text = member.Height.ToString();
+                textbox_height.Enabled = false;
                 textbox_weight.Text = member.Weight.ToString();
+                textbox_weight.Enabled = false;
                 textbox_mem_duration.Text = Math.Abs(member.DateJoined.Month - member.MembershipExpiryDate.Month).ToString();
                 textbox_mem_duration.Enabled = false;
                 textbox_weekly_entrance_right.Text = member.WeeklyEntranceRight.ToString();
@@ -224,11 +224,13 @@ namespace DBMS.Views
                     Int32.Parse(textbox_weekly_entrance_right.Text));
 
                 controller.AddMember(member);
+                controller.AddMembership(member);
+                controller.AddMemberImprovement(member);
 
                 MessageBox.Show("Member " + member.Name + " has been registered.");
 
                 // Reload Form
-                ListChanged();
+                MemberAdded();
 
                                             // CHANGE //
             } else {
@@ -245,7 +247,7 @@ namespace DBMS.Views
                     controller.UpdateMember(member, newMember);
                     MessageBox.Show("Member " + member.Name + " has been changed.");
 
-                    ListChanged();
+                    MemberChanged();
                 }
             }
         }
@@ -286,7 +288,7 @@ namespace DBMS.Views
             }
         }
 
-        private void ListChanged()
+        private void MemberAdded()
         {
             combo_box.Items.Clear();
 
@@ -295,6 +297,19 @@ namespace DBMS.Views
                 combo_box.Items.Add(o);
 
             combo_box.SelectedItem = combo_box.Items[combo_box.Items.Count - 1];
+        }
+
+        private void MemberChanged()
+        {
+            int i = combo_box.SelectedIndex;
+
+            combo_box.Items.Clear();
+
+            combo_box.Items.Add("New Member");
+            foreach (Object o in controller.GetMembers())
+                combo_box.Items.Add(o);
+            
+            combo_box.SelectedIndex = i;
         }
 
         private void Textbox_permission_level_TextChanged(object sender, EventArgs e)

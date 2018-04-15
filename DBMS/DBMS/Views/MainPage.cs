@@ -136,9 +136,16 @@ namespace DBMS.Views
             label_quick_info2.Text += controller.GetOutOfWarrantyEquipmentCount() + " Equipments which has expired warranty";
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Button_payments_Click(object sender, EventArgs e)
+        {
+            PaymentsPage payments = new PaymentsPage();
+
+            NavigateTo(payments);
         }
     }
 }

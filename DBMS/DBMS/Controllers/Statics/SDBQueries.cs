@@ -18,13 +18,16 @@
     public static readonly string MAIN_GET_OUT_OF_WARRANTY_EQUIPMENT = "SELECT COUNT(warranty) as c FROM " + SDBTables.MAINDB_EQUIPMENTS + " WHERE DATEDIFF(day, getdate(), DATEADD(year, warranty, date_of_arrival)) < 0";
 
     // Member Page queries
-    public static readonly string MEMBER_GET_MEMBERS_QUERY = "SELECT id, name FROM " + SDBTables.MAINDB_MEMBERS;
+    public static readonly string MEMBER_GET_MEMBERS_QUERY = "SELECT id, name, surname FROM " + SDBTables.MAINDB_MEMBERS;
     public static readonly string MEMBER_GET_ID = "SELECT id FROM " + SDBTables.MAINDB_MEMBERS + " WHERE payment_id = ";
     public static readonly string MEMBER_DELETE_MEMBER = "DELETE FROM " + SDBTables.MAINDB_MEMBERS + " WHERE id = ";
     public static readonly string MEMBER_GET_MEMBER = "SELECT * FROM " + SDBTables.MAINDB_MEMBERS + " WHERE id = ";
     public static readonly string MEMBER_ADD_MEMBER = "INSERT INTO " + SDBTables.MAINDB_MEMBERS +
         " (payment_id, permission_id, name, surname, gender, age, email, phone_number, address, height, weight," +
         "birth_date, date_joined, membership_expiry_date, weekly_entrance_right) VALUES('";
+    public static readonly string MEMBER_ADD_MEMBERSHIP = "INSERT INTO " + SDBTables.MAINDB_MEMBERSHIPS + "(member_id, new_payment_id, new_expiry_date, new_entrance_right) VALUES('";
+    public static readonly string MEMBER_DELETE_MEMBERSHIP = "DELETE FROM " + SDBTables.MAINDB_MEMBERSHIPS + " WHERE new_payment_id = ";
+
     public static readonly string MEMBER_UPDATE_MEMBER = "UPDATE " + SDBTables.MAINDB_MEMBERS + " SET ";
 
     public static readonly string MEMBER_PERMISSION_GET_ID = "SELECT id FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE facility_access_level = ";
@@ -37,4 +40,12 @@
     public static readonly string MEMBER_PAYMENT_SELECT_MAX_ID = "SELECT MAX(id) as id FROM " + SDBTables.MAINDB_PAYMENTS;
     public static readonly string MEMBER_ADD_PAYMENT = "INSERT INTO " + SDBTables.MAINDB_PAYMENTS + " (amount, payment_due_date, description, is_paid) VALUES('";
     public static readonly string MEMBER_GET_PAYMENT = "SELECT amount FROM " + SDBTables.MAINDB_PAYMENTS + " WHERE id = ";
+
+    public static readonly string MEMBER_ADD_MEMBER_IMPROVEMENTS = "INSERT INTO " + SDBTables.MAINDB_MEMBER_IMPROVEMENTS + "(member_id, weight, height, date) VALUES('";
+
+    // Payments Page queries
+    public static readonly string PAYMENT_GET_PAYMENTS = "SELECT * FROM " + SDBTables.MAINDB_MEMBERS + " JOIN "+ SDBTables.MAINDB_PAYMENTS + " ON Members.payment_id = Payments.id";
+    public static readonly string PAYMENT_GET_ID = "SELECT id FROM " + SDBTables.MAINDB_PAYMENTS + " WHERE amount = ";
+    public static readonly string PAYMENT_GET_PAYMENT = "SELECT * FROM " + SDBTables.MAINDB_PAYMENTS + " WHERE id = ";
+    public static readonly string PAYMENT_CHANGE = "UPDATE " + SDBTables.MAINDB_PAYMENTS + " SET";
 }
