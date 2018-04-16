@@ -26,7 +26,8 @@
         " (payment_id, permission_id, name, surname, gender, age, email, phone_number, address, height, weight," +
         "birth_date, date_joined, membership_expiry_date, weekly_entrance_right) VALUES('";
     public static readonly string MEMBER_ADD_MEMBERSHIP = "INSERT INTO " + SDBTables.MAINDB_MEMBERSHIPS + "(member_id, new_payment_id, new_expiry_date, new_entrance_right) VALUES('";
-    public static readonly string MEMBER_DELETE_MEMBERSHIP = "DELETE FROM " + SDBTables.MAINDB_MEMBERSHIPS + " WHERE new_payment_id = ";
+    public static readonly string MEMBER_DELETE_MEMBERSHIP = "DELETE FROM " + SDBTables.MAINDB_MEMBERSHIPS + " WHERE member_id = ";
+    public static readonly string MEMBER_DELETE_MEMBER_IMPROVEMENT = "DELETE FROM " + SDBTables.MAINDB_MEMBER_IMPROVEMENTS + " WHERE member_id = ";
 
     public static readonly string MEMBER_UPDATE_MEMBER = "UPDATE " + SDBTables.MAINDB_MEMBERS + " SET ";
 
@@ -57,4 +58,13 @@
     public static readonly string FACILITIES_ADD_FACILTIY = "INSERT INTO " + SDBTables.MAINDB_FACILITIES + "(permission_id, name) VALUES('";
     public static readonly string FACILITIES_ADD_PERMISSION = "INSERT INTO " + SDBTables.MAINDB_PERMISSIONS + "(facility_access_level) VALUES('";
     public static readonly string FACILITIES_CHANGE_FACILITY = "UPDATE " + SDBTables.MAINDB_FACILITIES + " SET";
+
+    // Equipments Page queries
+    public static readonly string EQUIPMENTS_ADD_EQUIPMENT = "INSERT INTO " + SDBTables.MAINDB_EQUIPMENTS + "(equipment_name, price, condition, date_of_arrival, warranty) VALUES('";
+    public static readonly string EQUIPMENTS_GET_EQUIPMENTS = "SELECT * FROM " + SDBTables.MAINDB_EQUIPMENTS;
+    public static readonly string EQUIPMENTS_GET_EQUIPMENT = "SELECT * FROM " + SDBTables.MAINDB_EQUIPMENTS + " WHERE id = ";
+    public static readonly string EQUIPMENTS_GET_EQUIPMENT_ID = "SELECT * FROM " + SDBTables.MAINDB_EQUIPMENTS + " WHERE equipment_name = ";
+    public static readonly string EQUIPMENTS_DELETE = "DELETE FROM " + SDBTables.MAINDB_EQUIPMENTS + " WHERE id = ";
+    public static readonly string EQUIPMENTS_CHANGE = "UPDATE " + SDBTables.MAINDB_EQUIPMENTS + " SET ";
+
 }

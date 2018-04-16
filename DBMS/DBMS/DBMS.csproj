@@ -95,12 +95,14 @@
     </Compile>
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\DB\Employee.cs" />
+    <Compile Include="Controllers\DB\Equipment.cs" />
     <Compile Include="Controllers\DB\Facility.cs" />
     <Compile Include="Controllers\DB\Member.cs" />
     <Compile Include="Controllers\DB\Payment.cs" />
     <Compile Include="Controllers\DB\Permission.cs" />
     <Compile Include="Controllers\DB\Person.cs" />
     <Compile Include="Controllers\DB\User.cs" />
+    <Compile Include="Controllers\EquipmentsController.cs" />
     <Compile Include="Controllers\FacilitiesController.cs" />
     <Compile Include="Controllers\Interfaces\IDBConnector.cs" />
     <Compile Include="Controllers\Interfaces\IDBLogger.cs" />
@@ -125,6 +127,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoursesPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CoursesPage.Designer.cs">
+      <DependentUpon>CoursesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EquipmentsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EquipmentsPage.Designer.cs">
+      <DependentUpon>EquipmentsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FacilitiesPage.cs">
       <SubType>Form</SubType>
@@ -152,6 +166,18 @@
     <Compile Include="Views\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MemberImprovementsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MemberImprovementsPage.Designer.cs">
+      <DependentUpon>MemberImprovementsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MembershipsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MembershipsPage.Designer.cs">
+      <DependentUpon>MembershipsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MembersPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +194,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EquipmentsPage.resx">
+      <DependentUpon>EquipmentsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FacilitiesPage.resx">
       <DependentUpon>FacilitiesPage.cs</DependentUpon>

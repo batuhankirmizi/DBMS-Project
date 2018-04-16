@@ -199,6 +199,7 @@
             this.button_equipments.Text = "Equipments";
             this.button_equipments.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_equipments.UseVisualStyleBackColor = false;
+            this.button_equipments.Click += new System.EventHandler(this.Button_equipments_Click);
             // 
             // button_courses
             // 
@@ -302,7 +303,7 @@
             this.button_login_history.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_login_history.UseVisualStyleBackColor = false;
             this.button_login_history.Visible = false;
-            this.button_login_history.Click += new System.EventHandler(this.button_login_history_Click);
+            this.button_login_history.Click += new System.EventHandler(this.Button_login_history_Click);
             // 
             // button_permissions
             // 

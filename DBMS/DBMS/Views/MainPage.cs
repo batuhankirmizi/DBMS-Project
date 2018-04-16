@@ -127,15 +127,15 @@ namespace DBMS.Views
         
         private void AddQuickInfo()
         {
-            label_quick_info.Text += "\n" + controller.GetMemberCount() + " Members\n";
-            label_quick_info.Text += controller.GetEmployeeCount() + " Employees\n";
-            label_quick_info.Text += controller.GetFacilityCount() + " Facilities\n";
-            label_quick_info.Text += controller.GetUnpaidPaymentCount() + " Unpaid Payments";
+            label_quick_info.Text += "\n" + controller.GetMemberCount() + " Member" + (controller.GetMemberCount() != 1 ? "s" : "") + "\n";
+            label_quick_info.Text += controller.GetEmployeeCount() + " Employee" + (controller.GetEmployeeCount() != 1 ? "s" : "") + "\n";
+            label_quick_info.Text += controller.GetFacilityCount() + " Facilitie" + (controller.GetFacilityCount() != 1 ? "s" : "") + "\n";
+            label_quick_info.Text += controller.GetUnpaidPaymentCount() + " Unpaid Payment" + (controller.GetUnpaidPaymentCount() != 1 ? "s" : "") + "\n";
 
-            label_quick_info2.Text += controller.GetCourseCount() + " Courses\n";
-            label_quick_info2.Text += controller.GetMembershipsAboutToFinish() + " Memberships less than 10 days to expire\n";
-            label_quick_info2.Text += controller.GetEquipmentCount() + " Equipments\n";
-            label_quick_info2.Text += controller.GetOutOfWarrantyEquipmentCount() + " Equipments which has expired warranty";
+            label_quick_info2.Text += controller.GetCourseCount() + " Course" + (controller.GetCourseCount() != 1 ? "s" : "") + "\n";
+            label_quick_info2.Text += controller.GetMembershipsAboutToFinish() + " Membership" + (controller.GetMembershipsAboutToFinish() != 1 ? "s" : "") + " less than 10 days to expire\n";
+            label_quick_info2.Text += controller.GetEquipmentCount() + " Equipment" + (controller.GetEquipmentCount() != 1 ? "s" : "") + "\n";
+            label_quick_info2.Text += controller.GetOutOfWarrantyEquipmentCount() + " Equipment" + (controller.GetOutOfWarrantyEquipmentCount() != 1 ? "s" : "") + " which has expired warranty";
         }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -157,11 +157,18 @@ namespace DBMS.Views
             NavigateTo(facilities);
         }
 
-        private void button_login_history_Click(object sender, EventArgs e)
+        private void Button_login_history_Click(object sender, EventArgs e)
         {
             LoginHistoryPage loginHistory = new LoginHistoryPage();
 
             NavigateTo(loginHistory);
+        }
+
+        private void Button_equipments_Click(object sender, EventArgs e)
+        {
+            EquipmentsPage equipments = new EquipmentsPage();
+
+            NavigateTo(equipments);
         }
     }
 }

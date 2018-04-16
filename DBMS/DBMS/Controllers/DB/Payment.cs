@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DBMS.Controllers.DB
 {
@@ -34,6 +35,20 @@ namespace DBMS.Controllers.DB
                    isPaid == payment.isPaid;
         }
 
+        public override int GetHashCode()
+        {
+            var hashCode = 364740804;
+            hashCode = hashCode * -1521134295 + amount.GetHashCode();
+            hashCode = hashCode * -1521134295 + dueDate.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(description);
+            hashCode = hashCode * -1521134295 + isPaid.GetHashCode();
+            hashCode = hashCode * -1521134295 + Amount.GetHashCode();
+            hashCode = hashCode * -1521134295 + DueDate.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Description);
+            hashCode = hashCode * -1521134295 + IsPaid.GetHashCode();
+            return hashCode;
+        }
+
         public override string ToString()
         {
             return amount.ToString() + "\n" +
@@ -41,5 +56,7 @@ namespace DBMS.Controllers.DB
                 description + "\n" +
                 isPaid;
         }
+
+
     }
 }

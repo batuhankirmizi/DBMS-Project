@@ -110,7 +110,6 @@ namespace DBMS.Controllers
 
         internal void ChangeFacility(Facility currentFacility, Facility newFacility)
         {
-            MessageBox.Show(SDBQueries.FACILITIES_CHANGE_FACILITY + " name = '" + newFacility.Name + "' WHERE name = '" + currentFacility.Name + "'");
             using(Reader = ExecuteQuery(SDBQueries.FACILITIES_CHANGE_FACILITY + " name = '" + newFacility.Name + "' WHERE name = '" + currentFacility.Name + "'"))
             {
                 Reader.Close();

@@ -204,7 +204,9 @@ namespace DBMS.Controllers
 
         internal void DeleteMember(Member member)
         {
-            using (Reader = ExecuteQuery(SDBQueries.MEMBER_DELETE_MEMBERSHIP + member.Payment_id.ToString()))
+            using (Reader = ExecuteQuery(SDBQueries.MEMBER_DELETE_MEMBER_IMPROVEMENT + GetMemberId(member).ToString()))
+                Reader.Close();
+            using (Reader = ExecuteQuery(SDBQueries.MEMBER_DELETE_MEMBERSHIP + GetMemberId(member).ToString()))
                 Reader.Close();
             using (Reader = ExecuteQuery(SDBQueries.MEMBER_DELETE_MEMBER + GetMemberId(member).ToString()))
                 Reader.Close();
