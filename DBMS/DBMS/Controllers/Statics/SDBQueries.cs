@@ -67,4 +67,13 @@
     public static readonly string EQUIPMENTS_DELETE = "DELETE FROM " + SDBTables.MAINDB_EQUIPMENTS + " WHERE id = ";
     public static readonly string EQUIPMENTS_CHANGE = "UPDATE " + SDBTables.MAINDB_EQUIPMENTS + " SET ";
 
+    // Courses Page queries
+    public static readonly string COURSES_GET_EMP_ID = "SELECT id FROM " + SDBTables.MAINDB_EMPLOYEES + " WHERE name = '";
+    public static readonly string COURSES_GET_EMP_ID_BY_CID = "SELECT employee_id FROM " + SDBTables.MAINDB_COURSES + " WHERE id = '";
+    public static readonly string COURSES_ADD_COURSE = "INSERT INTO " + SDBTables.MAINDB_COURSES + "(employee_id, name, description, course_day, is_active) VALUES('";
+    public static readonly string COURSES_GET_COURSES = "SELECT id, name FROM " + SDBTables.MAINDB_COURSES;
+    public static readonly string COURSES_GET_COURSE = "SELECT * FROM " + SDBTables.MAINDB_COURSES + " WHERE id = ";
+    public static readonly string COURSES_GET_EMP_NAME = "SELECT name FROM " + SDBTables.MAINDB_EMPLOYEES + " WHERE id = ";
+    public static readonly string COURSES_DELETE_COURSE = "DELETE FROM " + SDBTables.MAINDB_COURSES + " WHERE id = ";
+    public static readonly string COURSES_CHANGE_COURSE = "UPDATE " + SDBTables.MAINDB_COURSES + " SET ";
 }

@@ -94,6 +94,8 @@
       <DependentUpon>AdministrationDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\DB\Course.cs" />
     <Compile Include="Controllers\DB\Employee.cs" />
     <Compile Include="Controllers\DB\Equipment.cs" />
     <Compile Include="Controllers\DB\Facility.cs" />
@@ -194,6 +196,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CoursesPage.resx">
+      <DependentUpon>CoursesPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EquipmentsPage.resx">
       <DependentUpon>EquipmentsPage.cs</DependentUpon>

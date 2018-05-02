@@ -217,6 +217,7 @@
             this.button_courses.Text = "Courses";
             this.button_courses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_courses.UseVisualStyleBackColor = false;
+            this.button_courses.Click += new System.EventHandler(this.Button_courses_Click);
             // 
             // button_member_improvements
             // 

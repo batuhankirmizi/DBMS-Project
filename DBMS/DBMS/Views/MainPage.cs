@@ -170,5 +170,12 @@ namespace DBMS.Views
 
             NavigateTo(equipments);
         }
+
+        private void Button_courses_Click(object sender, EventArgs e)
+        {
+            Courses courses = new Courses();
+
+            NavigateTo(courses);
+        }
     }
 }
