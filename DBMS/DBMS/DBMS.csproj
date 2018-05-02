@@ -114,6 +114,7 @@
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
+    <Compile Include="Controllers\PermissionsController.cs" />
     <Compile Include="Controllers\Statics\SSession.cs" />
     <Compile Include="Controllers\Statics\SDBQueries.cs" />
     <Compile Include="Controllers\Statics\SDBStatics.cs" />
@@ -192,6 +193,12 @@
     <Compile Include="Views\PaymentsPage.Designer.cs">
       <DependentUpon>PaymentsPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PermissionsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PermissionsPage.Designer.cs">
+      <DependentUpon>PermissionsPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -220,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PaymentsPage.resx">
       <DependentUpon>PaymentsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PermissionsPage.resx">
+      <DependentUpon>PermissionsPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AdministrationDataSet.xsc">
       <DependentUpon>AdministrationDataSet.xsd</DependentUpon>

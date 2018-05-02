@@ -325,6 +325,7 @@
             this.button_permissions.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_permissions.UseVisualStyleBackColor = false;
             this.button_permissions.Visible = false;
+            this.button_permissions.Click += new System.EventHandler(this.Button_permissions_Click);
             // 
             // button_roles
             // 

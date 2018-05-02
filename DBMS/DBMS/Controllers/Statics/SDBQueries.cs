@@ -76,4 +76,10 @@
     public static readonly string COURSES_GET_EMP_NAME = "SELECT name FROM " + SDBTables.MAINDB_EMPLOYEES + " WHERE id = ";
     public static readonly string COURSES_DELETE_COURSE = "DELETE FROM " + SDBTables.MAINDB_COURSES + " WHERE id = ";
     public static readonly string COURSES_CHANGE_COURSE = "UPDATE " + SDBTables.MAINDB_COURSES + " SET ";
+
+    // Permissions Page queries
+    public static readonly string PERMISSIONS_GET_ALL_PERMS = "SELECT * FROM " + SDBTables.MAINDB_PERMISSIONS;
+    public static readonly string PERMISSIONS_GET_PERM = "SELECT * FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE id = ";
+    public static readonly string PERMISSIONS_GET_PERM_FAL = "SELECT * FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE facility_access_level = ";
+    public static readonly string PERMISSIONS_ADD_PERM = "INSERT INTO " + SDBTables.MAINDB_PERMISSIONS + "(facility_access_level) VALUES('";
 }

@@ -177,5 +177,12 @@ namespace DBMS.Views
 
             NavigateTo(courses);
         }
+
+        private void Button_permissions_Click(object sender, EventArgs e)
+        {
+            PermissionsPage permissions = new PermissionsPage();
+
+            NavigateTo(permissions);
+        }
     }
 }
