@@ -40,12 +40,14 @@
             this.textBox_description = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button_add = new System.Windows.Forms.Button();
-            this.textBox_trainer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_course_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.main_DatabaseDataSet2 = new DBMS.Main_DatabaseDataSet2();
+            this.textBox_trainer = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.main_DatabaseDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -207,17 +209,6 @@
             this.button_add.UseVisualStyleBackColor = false;
             this.button_add.Click += new System.EventHandler(this.Button_add_Click);
             // 
-            // textBox_trainer
-            // 
-            this.textBox_trainer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_trainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox_trainer.Location = new System.Drawing.Point(393, 104);
-            this.textBox_trainer.MaxLength = 25;
-            this.textBox_trainer.Name = "textBox_trainer";
-            this.textBox_trainer.Size = new System.Drawing.Size(345, 30);
-            this.textBox_trainer.TabIndex = 8;
-            this.textBox_trainer.TextChanged += new System.EventHandler(this.TextBox_trainer_TextChanged);
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -251,6 +242,22 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Course Name";
             // 
+            // main_DatabaseDataSet2
+            // 
+            this.main_DatabaseDataSet2.DataSetName = "Main_DatabaseDataSet2";
+            this.main_DatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // textBox_trainer
+            // 
+            this.textBox_trainer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_trainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox_trainer.Location = new System.Drawing.Point(393, 104);
+            this.textBox_trainer.MaxLength = 25;
+            this.textBox_trainer.Name = "textBox_trainer";
+            this.textBox_trainer.Size = new System.Drawing.Size(345, 30);
+            this.textBox_trainer.TabIndex = 8;
+            this.textBox_trainer.TextChanged += new System.EventHandler(this.TextBox_trainer_TextChanged);
+            // 
             // Courses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,10 +272,10 @@
             this.Text = "Courses";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CoursesPage_FormClosing);
-            this.Load += new System.EventHandler(this.CoursesPage_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.main_DatabaseDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,11 +292,12 @@
         private System.Windows.Forms.TextBox textBox_description;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_add;
-        private System.Windows.Forms.TextBox textBox_trainer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_course_name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_day;
         private System.Windows.Forms.ComboBox comboBox_active;
+        private Main_DatabaseDataSet2 main_DatabaseDataSet2;
+        private System.Windows.Forms.TextBox textBox_trainer;
     }
 }

@@ -110,7 +110,15 @@ namespace DBMS.Controllers
 
         internal void ChangeFacility(Facility currentFacility, Facility newFacility)
         {
-            using(Reader = ExecuteQuery(SDBQueries.FACILITIES_CHANGE_FACILITY + " name = '" + newFacility.Name + "' WHERE name = '" + currentFacility.Name + "'"))
+            using(Reader = ExecuteQuery(SDBQueries.FACILITIES_CHANGE_FACILITY + "name = '" + newFacility.Name + "' WHERE name = '" + currentFacility.Name + "'"))
+            {
+                Reader.Close();
+            }
+        }
+
+        internal void DeleteFacility(string name)
+        {
+            using(Reader = ExecuteQuery(SDBQueries.FACILITIES_DELETE_FACILTIY + name + "'"))
             {
                 Reader.Close();
             }

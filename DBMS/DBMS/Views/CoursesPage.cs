@@ -64,11 +64,6 @@ namespace DBMS.Views
             form.Activate(this);
         }
 
-        private void CoursesPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void CoursesPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             Destroy();

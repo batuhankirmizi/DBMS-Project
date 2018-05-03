@@ -72,6 +72,8 @@ namespace DBMS.Views
 
                 textBox_permission.Text = "";
                 textBox_name.Text = "";
+
+                button1.Visible = false;
             } else
             {
                 textBox_permission.Enabled = false;
@@ -80,6 +82,8 @@ namespace DBMS.Views
 
                 textBox_permission.Text = currentFacility.Permission.ToString();
                 textBox_name.Text = currentFacility.Name;
+
+                button1.Visible = true;
             }
         }
 
@@ -167,6 +171,29 @@ namespace DBMS.Views
                 comboBox.Items.Add(facility);
 
             comboBox.SelectedIndex = comboBox.Items.Count - 1;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            controller.DeleteFacility(textBox_name.Text);
+
+            FacilityDeleted();
+        }
+
+        private void FacilityDeleted()
+        {
+            MessageBox.Show("Facility " + textBox_name.Text + " deleted.");
+            
+            comboBox.Items.Clear();
+            comboBox.Items.Add("New Facility");
+            comboBox.SelectedIndex = 0;
+            currentFacility = null;
+            LinkedList<string> facilities = controller.GetFacilities();
+            foreach (string facility in facilities)
+                comboBox.Items.Add(facility);
+
+            textBox_permission.Text = "";
+            textBox_name.Text = "";
         }
     }
 }

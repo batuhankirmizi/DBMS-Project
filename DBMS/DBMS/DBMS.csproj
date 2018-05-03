@@ -104,6 +104,7 @@
     <Compile Include="Controllers\DB\Permission.cs" />
     <Compile Include="Controllers\DB\Person.cs" />
     <Compile Include="Controllers\DB\User.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\EquipmentsController.cs" />
     <Compile Include="Controllers\FacilitiesController.cs" />
     <Compile Include="Controllers\Interfaces\IDBConnector.cs" />
@@ -126,6 +127,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Main_DatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Main_DatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Main_DatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Main_DatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Main_DatabaseDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +147,12 @@
     </Compile>
     <Compile Include="Views\CoursesPage.Designer.cs">
       <DependentUpon>CoursesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeesPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeesPage.Designer.cs">
+      <DependentUpon>EmployeesPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\EquipmentsPage.cs">
       <SubType>Form</SubType>
@@ -207,6 +224,9 @@
     <EmbeddedResource Include="Views\CoursesPage.resx">
       <DependentUpon>CoursesPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeesPage.resx">
+      <DependentUpon>EmployeesPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EquipmentsPage.resx">
       <DependentUpon>EquipmentsPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +272,28 @@
     </None>
     <None Include="Main_DatabaseDataSet.xss">
       <DependentUpon>Main_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Main_DatabaseDataSet1.xsc">
+      <DependentUpon>Main_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Main_DatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Main_DatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Main_DatabaseDataSet1.xss">
+      <DependentUpon>Main_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Main_DatabaseDataSet2.xsc">
+      <DependentUpon>Main_DatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Main_DatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Main_DatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Main_DatabaseDataSet2.xss">
+      <DependentUpon>Main_DatabaseDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

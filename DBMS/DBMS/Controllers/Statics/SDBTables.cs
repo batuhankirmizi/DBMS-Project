@@ -23,4 +23,8 @@
     public static string MAINDB_MEMBERSHIPS = "Memberships";
 
     public static string MAINDB_MEMBER_IMPROVEMENTS = "[Member Improvements]";
+
+    public static string MAINDB_SALARIES = "Salaries";
+    
+    public static string MAINDB_ROLES = "Roles";
 }

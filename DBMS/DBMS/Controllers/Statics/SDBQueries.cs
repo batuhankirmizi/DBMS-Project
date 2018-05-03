@@ -56,8 +56,9 @@
     public static readonly string FACILITIES_GET_PERMISSION_ID = "SELECT id FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE facility_access_level = '";
     public static readonly string FACILITIES_GET_PERMISSION = "SELECT * FROM " + SDBTables.MAINDB_FACILITIES + " JOIN " + SDBTables.MAINDB_PERMISSIONS + " ON Facilities.permission_id = Perms.id WHERE name = '";
     public static readonly string FACILITIES_ADD_FACILTIY = "INSERT INTO " + SDBTables.MAINDB_FACILITIES + "(permission_id, name) VALUES('";
+    public static readonly string FACILITIES_DELETE_FACILTIY = "DELETE FROM " + SDBTables.MAINDB_FACILITIES + " WHERE name = '";
     public static readonly string FACILITIES_ADD_PERMISSION = "INSERT INTO " + SDBTables.MAINDB_PERMISSIONS + "(facility_access_level) VALUES('";
-    public static readonly string FACILITIES_CHANGE_FACILITY = "UPDATE " + SDBTables.MAINDB_FACILITIES + " SET";
+    public static readonly string FACILITIES_CHANGE_FACILITY = "UPDATE " + SDBTables.MAINDB_FACILITIES + " SET ";
 
     // Equipments Page queries
     public static readonly string EQUIPMENTS_ADD_EQUIPMENT = "INSERT INTO " + SDBTables.MAINDB_EQUIPMENTS + "(equipment_name, price, condition, date_of_arrival, warranty) VALUES('";
@@ -82,4 +83,15 @@
     public static readonly string PERMISSIONS_GET_PERM = "SELECT * FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE id = ";
     public static readonly string PERMISSIONS_GET_PERM_FAL = "SELECT * FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE facility_access_level = ";
     public static readonly string PERMISSIONS_ADD_PERM = "INSERT INTO " + SDBTables.MAINDB_PERMISSIONS + "(facility_access_level) VALUES('";
+
+    // Employees Page queries
+    public static readonly string EMPLOYEES_GET_ALL_EMPS = "SELECT * FROM " + SDBTables.MAINDB_EMPLOYEES;
+    public static readonly string EMPLOYEES_GET_EMP = "SELECT * FROM " + SDBTables.MAINDB_EMPLOYEES + " WHERE id = ";
+    public static readonly string EMPLOYEES_GET_EMP_ID = "SELECT id FROM " + SDBTables.MAINDB_EMPLOYEES + " WHERE phone_number = ";
+    public static readonly string EMPLOYEES_GET_ROLE_ID = "SELECT * FROM " + SDBTables.MAINDB_ROLES + " WHERE role_name = '";
+    public static readonly string EMPLOYEES_GET_ROLE_NAME = "SELECT role_name FROM " + SDBTables.MAINDB_ROLES + " WHERE id = '";
+    public static readonly string EMPLOYEES_GET_EMPS_COMBO = "SELECT id, name, surname FROM " + SDBTables.MAINDB_EMPLOYEES;
+    public static readonly string EMPLOYEES_DELETE_EMPLOYEE = "DELETE FROM " + SDBTables.MAINDB_EMPLOYEES + " WHERE id = ";
+    public static readonly string EMPLOYEES_ADD_EMPLOYEE = "INSERT INTO " + SDBTables.MAINDB_EMPLOYEES + "(role_id, name, surname, gender, age, email, phone_number, address, birth_date, date_joined) VALUES('";
+    public static readonly string EMPLOYEES_UPDATE_EMPLOYEE = "UPDATE " + SDBTables.MAINDB_EMPLOYEES + " SET ";
 }

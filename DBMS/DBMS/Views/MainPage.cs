@@ -184,5 +184,12 @@ namespace DBMS.Views
 
             NavigateTo(permissions);
         }
+
+        private void Button_employees_Click(object sender, EventArgs e)
+        {
+            EmployeesPage employees = new EmployeesPage();
+
+            NavigateTo(employees);
+        }
     }
 }
