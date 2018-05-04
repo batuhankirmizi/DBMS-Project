@@ -162,7 +162,7 @@
             // button_delete
             // 
             this.button_delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_delete.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_delete.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_delete.FlatAppearance.BorderSize = 0;
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -239,7 +239,7 @@
             // button_register
             // 
             this.button_register.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_register.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_register.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button_register.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_register.FlatAppearance.BorderSize = 0;
             this.button_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

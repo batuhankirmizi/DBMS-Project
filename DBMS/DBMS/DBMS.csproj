@@ -103,6 +103,7 @@
     <Compile Include="Controllers\DB\Payment.cs" />
     <Compile Include="Controllers\DB\Permission.cs" />
     <Compile Include="Controllers\DB\Person.cs" />
+    <Compile Include="Controllers\DB\Role.cs" />
     <Compile Include="Controllers\DB\User.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\EquipmentsController.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\PermissionsController.cs" />
+    <Compile Include="Controllers\RolesPageController.cs" />
     <Compile Include="Controllers\Statics\SSession.cs" />
     <Compile Include="Controllers\Statics\SDBQueries.cs" />
     <Compile Include="Controllers\Statics\SDBStatics.cs" />
@@ -216,6 +218,12 @@
     <Compile Include="Views\PermissionsPage.Designer.cs">
       <DependentUpon>PermissionsPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\RolesPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RolesPage.Designer.cs">
+      <DependentUpon>RolesPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -250,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PermissionsPage.resx">
       <DependentUpon>PermissionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RolesPage.resx">
+      <DependentUpon>RolesPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AdministrationDataSet.xsc">
       <DependentUpon>AdministrationDataSet.xsd</DependentUpon>

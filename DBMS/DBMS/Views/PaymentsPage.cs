@@ -119,6 +119,11 @@ namespace DBMS.Views
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             payment = controller.GetPayment(Int32.Parse(comboBox.Text.Split('-')[0]));
+
+            textBox_amount.Text = payment.Amount.ToString();
+            datetime_due_date.Text = DateTime.Parse(payment.DueDate.ToString()).ToString();
+            textBox_description.Text = payment.Description;
+            comboBox_paid.Text = payment.IsPaid ? "Yes" : "No";
         }
     }
 }

@@ -191,5 +191,12 @@ namespace DBMS.Views
 
             NavigateTo(employees);
         }
+
+        private void Button_roles_Click(object sender, EventArgs e)
+        {
+            RolesPage roles = new RolesPage();
+
+            NavigateTo(roles);
+        }
     }
 }

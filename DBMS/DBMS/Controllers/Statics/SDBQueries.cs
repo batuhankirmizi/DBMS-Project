@@ -94,4 +94,13 @@
     public static readonly string EMPLOYEES_DELETE_EMPLOYEE = "DELETE FROM " + SDBTables.MAINDB_EMPLOYEES + " WHERE id = ";
     public static readonly string EMPLOYEES_ADD_EMPLOYEE = "INSERT INTO " + SDBTables.MAINDB_EMPLOYEES + "(role_id, name, surname, gender, age, email, phone_number, address, birth_date, date_joined) VALUES('";
     public static readonly string EMPLOYEES_UPDATE_EMPLOYEE = "UPDATE " + SDBTables.MAINDB_EMPLOYEES + " SET ";
+
+    // Roles Page queries
+    public static readonly string ROLES_GET_ALL_ROLES = "SELECT * FROM " + SDBTables.MAINDB_ROLES;
+    public static readonly string ROLES_GET_ROLE = "SELECT * FROM " + SDBTables.MAINDB_ROLES + " WHERE id = ";
+    public static readonly string ROLES_GET_ROLE_ID = "SELECT id FROM " + SDBTables.MAINDB_ROLES + " WHERE role_name = '";
+    public static readonly string ROLES_GET_PERMISSION_ID = "SELECT id FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE facility_access_level = ";
+    public static readonly string ROLES_GET_PERMISSION = "SELECT facility_access_level FROM " + SDBTables.MAINDB_PERMISSIONS + " WHERE id = ";
+    public static readonly string ROLES_ADD_ROLE = "INSERT INTO " + SDBTables.MAINDB_ROLES + "(permission_id, role_name) VALUES('";
+    public static readonly string ROLES_CHANGE_ROLE = "UPDATE " + SDBTables.MAINDB_ROLES + " SET ";
 }

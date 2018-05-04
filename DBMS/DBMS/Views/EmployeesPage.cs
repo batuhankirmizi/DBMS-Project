@@ -129,6 +129,12 @@ namespace DBMS.Views
                 Employee newEmployee = new Employee(controller.GetRoleId(comboBox_role.Text), textbox_name.Text, textbox_surname.Text, Char.Parse(comboBox_gender.Text.Substring(0, 1)),
                     Int32.Parse(textbox_age.Text), textbox_email.Text, long.Parse(textbox_phone_number.Text), textbox_address.Text,
                     DateTime.Parse(date_birth.Text), DateTime.Parse(date_joined.Text));
+
+                if (currentEmployee.GetDifferences(newEmployee).Equals(""))
+                {
+                    MessageBox.Show("Nothing has changed.");
+                    return;
+                }
                 
                 controller.ChangeEmployee(currentEmployee, newEmployee);
 

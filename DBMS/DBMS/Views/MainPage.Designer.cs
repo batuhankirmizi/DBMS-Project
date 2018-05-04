@@ -415,6 +415,7 @@
             this.button_roles.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_roles.UseVisualStyleBackColor = false;
             this.button_roles.Visible = false;
+            this.button_roles.Click += new System.EventHandler(this.Button_roles_Click);
             // 
             // button_salaries
             // 

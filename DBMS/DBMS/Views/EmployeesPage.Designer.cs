@@ -33,6 +33,10 @@
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.button_back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox_role = new System.Windows.Forms.ComboBox();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.main_DatabaseDataSet1 = new DBMS.Main_DatabaseDataSet1();
+            this.label8 = new System.Windows.Forms.Label();
             this.button_delete = new System.Windows.Forms.Button();
             this.comboBox_gender = new System.Windows.Forms.ComboBox();
             this.button_register = new System.Windows.Forms.Button();
@@ -56,18 +60,14 @@
             this.main_DatabaseDataSet = new DBMS.Main_DatabaseDataSet();
             this.mainDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mainDatabaseDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.main_DatabaseDataSet1 = new DBMS.Main_DatabaseDataSet1();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolesTableAdapter = new DBMS.Main_DatabaseDataSet1TableAdapters.RolesTableAdapter();
-            this.comboBox_role = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.main_DatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDatabaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDatabaseDataSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.main_DatabaseDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -138,10 +138,44 @@
             this.panel2.Size = new System.Drawing.Size(1382, 553);
             this.panel2.TabIndex = 5;
             // 
+            // comboBox_role
+            // 
+            this.comboBox_role.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_role.DataSource = this.rolesBindingSource;
+            this.comboBox_role.DisplayMember = "role_name";
+            this.comboBox_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_role.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBox_role.FormattingEnabled = true;
+            this.comboBox_role.Location = new System.Drawing.Point(631, 313);
+            this.comboBox_role.Name = "comboBox_role";
+            this.comboBox_role.Size = new System.Drawing.Size(279, 33);
+            this.comboBox_role.TabIndex = 35;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "Roles";
+            this.rolesBindingSource.DataSource = this.main_DatabaseDataSet1;
+            // 
+            // main_DatabaseDataSet1
+            // 
+            this.main_DatabaseDataSet1.DataSetName = "Main_DatabaseDataSet1";
+            this.main_DatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(522, 315);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 26);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Role";
+            // 
             // button_delete
             // 
             this.button_delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_delete.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_delete.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_delete.FlatAppearance.BorderSize = 0;
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,7 +207,7 @@
             // button_register
             // 
             this.button_register.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_register.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_register.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button_register.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_register.FlatAppearance.BorderSize = 0;
             this.button_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -387,43 +421,9 @@
             this.mainDatabaseDataSetBindingSource1.DataSource = this.main_DatabaseDataSet;
             this.mainDatabaseDataSetBindingSource1.Position = 0;
             // 
-            // main_DatabaseDataSet1
-            // 
-            this.main_DatabaseDataSet1.DataSetName = "Main_DatabaseDataSet1";
-            this.main_DatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "Roles";
-            this.rolesBindingSource.DataSource = this.main_DatabaseDataSet1;
-            // 
             // rolesTableAdapter
             // 
             this.rolesTableAdapter.ClearBeforeFill = true;
-            // 
-            // comboBox_role
-            // 
-            this.comboBox_role.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox_role.DataSource = this.rolesBindingSource;
-            this.comboBox_role.DisplayMember = "role_name";
-            this.comboBox_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_role.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboBox_role.FormattingEnabled = true;
-            this.comboBox_role.Location = new System.Drawing.Point(631, 313);
-            this.comboBox_role.Name = "comboBox_role";
-            this.comboBox_role.Size = new System.Drawing.Size(279, 33);
-            this.comboBox_role.TabIndex = 35;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(522, 315);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 26);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Role";
             // 
             // EmployeesPage
             // 
@@ -443,11 +443,11 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.main_DatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.main_DatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDatabaseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDatabaseDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.main_DatabaseDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
